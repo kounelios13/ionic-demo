@@ -20,6 +20,8 @@
   </ion-header>
   
   <ion-list>
-    <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    @for (message of getMessages(); track $index) {
+      <app-message [message]="message"></app-message>
+    }
   </ion-list>
 </ion-content>
